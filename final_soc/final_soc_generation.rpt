@@ -1,0 +1,163 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: ip-generate --project-directory=C:\ece385\final --output-directory=C:\ece385\final\final_soc --report-file=bsf:C:\ece385\final\final_soc\final_soc.bsf --system-info=DEVICE_FAMILY="Cyclone IV E" --system-info=DEVICE=EP4CE115F29C7 --system-info=DEVICE_SPEEDGRADE=7 --component-file=C:\ece385\final\final_soc.qsys
+Progress: Loading final/final_soc.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 14.0]
+Progress: Parameterizing module clk_0
+Progress: Adding nios2_qsys_0 [altera_nios2_qsys 14.0]
+Progress: Parameterizing module nios2_qsys_0
+Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 14.0]
+Progress: Parameterizing module onchip_memory2_0
+Progress: Adding sdram [altera_avalon_new_sdram_controller 14.0]
+Progress: Parameterizing module sdram
+Progress: Adding sdram_pll [altpll 14.0]
+Progress: Parameterizing module sdram_pll
+Progress: Adding switches [altera_avalon_pio 14.0]
+Progress: Parameterizing module switches
+Progress: Adding keys [altera_avalon_pio 14.0]
+Progress: Parameterizing module keys
+Progress: Adding sysid_qsys_0 [altera_avalon_sysid_qsys 14.0]
+Progress: Parameterizing module sysid_qsys_0
+Progress: Adding led [altera_avalon_pio 14.0]
+Progress: Parameterizing module led
+Progress: Adding keycode [altera_avalon_pio 14.0]
+Progress: Parameterizing module keycode
+Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 14.0]
+Progress: Parameterizing module jtag_uart_0
+Progress: Adding keypress [altera_avalon_pio 14.0]
+Progress: Parameterizing module keypress
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: final_soc.nios2_qsys_0: Please note that for early evaluation, preview versions of new Nios II Gen2 Processors are available with this release.
+Info: final_soc.keys: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: final_soc.sysid_qsys_0: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: final_soc.sysid_qsys_0: Time stamp will be automatically updated when this component is generated.
+Info: final_soc.keycode: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: final_soc.keypress: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Warning: final_soc.sdram_pll: sdram_pll.areset_conduit must be exported, or connected to a matching conduit.
+Warning: final_soc.sdram_pll: sdram_pll.locked_conduit must be exported, or connected to a matching conduit.
+Warning: final_soc.sdram_pll: sdram_pll.phasedone_conduit must be exported, or connected to a matching conduit.
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory=C:\ece385\final --output-directory=C:\ece385\final\final_soc\synthesis --file-set=QUARTUS_SYNTH --report-file=html:C:\ece385\final\final_soc\final_soc.html --report-file=sopcinfo:C:\ece385\final\final_soc.sopcinfo --report-file=cmp:C:\ece385\final\final_soc\final_soc.cmp --report-file=qip:C:\ece385\final\final_soc\synthesis\final_soc.qip --report-file=svd:C:\ece385\final\final_soc\synthesis\final_soc.svd --report-file=regmap:C:\ece385\final\final_soc\synthesis\final_soc.regmap --report-file=xml:C:\ece385\final\final_soc\final_soc.xml --report-file=debuginfo:C:\ece385\final\final_soc\synthesis\final_soc.debuginfo --system-info=DEVICE_FAMILY="Cyclone IV E" --system-info=DEVICE=EP4CE115F29C7 --system-info=DEVICE_SPEEDGRADE=7 --component-file=C:\ece385\final\final_soc.qsys --language=VERILOG
+Progress: Loading final/final_soc.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 14.0]
+Progress: Parameterizing module clk_0
+Progress: Adding nios2_qsys_0 [altera_nios2_qsys 14.0]
+Progress: Parameterizing module nios2_qsys_0
+Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 14.0]
+Progress: Parameterizing module onchip_memory2_0
+Progress: Adding sdram [altera_avalon_new_sdram_controller 14.0]
+Progress: Parameterizing module sdram
+Progress: Adding sdram_pll [altpll 14.0]
+Progress: Parameterizing module sdram_pll
+Progress: Adding switches [altera_avalon_pio 14.0]
+Progress: Parameterizing module switches
+Progress: Adding keys [altera_avalon_pio 14.0]
+Progress: Parameterizing module keys
+Progress: Adding sysid_qsys_0 [altera_avalon_sysid_qsys 14.0]
+Progress: Parameterizing module sysid_qsys_0
+Progress: Adding led [altera_avalon_pio 14.0]
+Progress: Parameterizing module led
+Progress: Adding keycode [altera_avalon_pio 14.0]
+Progress: Parameterizing module keycode
+Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 14.0]
+Progress: Parameterizing module jtag_uart_0
+Progress: Adding keypress [altera_avalon_pio 14.0]
+Progress: Parameterizing module keypress
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: final_soc.nios2_qsys_0: Please note that for early evaluation, preview versions of new Nios II Gen2 Processors are available with this release.
+Info: final_soc.keys: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: final_soc.sysid_qsys_0: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: final_soc.sysid_qsys_0: Time stamp will be automatically updated when this component is generated.
+Info: final_soc.keycode: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: final_soc.keypress: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Warning: final_soc.sdram_pll: sdram_pll.areset_conduit must be exported, or connected to a matching conduit.
+Warning: final_soc.sdram_pll: sdram_pll.locked_conduit must be exported, or connected to a matching conduit.
+Warning: final_soc.sdram_pll: sdram_pll.phasedone_conduit must be exported, or connected to a matching conduit.
+Info: final_soc: Generating final_soc "final_soc" for QUARTUS_SYNTH
+Info: Inserting clock-crossing logic between cmd_demux.src3 and cmd_mux_003.sink0
+Info: Inserting clock-crossing logic between cmd_demux_001.src3 and cmd_mux_003.sink1
+Info: Inserting clock-crossing logic between rsp_demux_003.src0 and rsp_mux.sink3
+Info: Inserting clock-crossing logic between rsp_demux_003.src1 and rsp_mux_001.sink3
+Info: nios2_qsys_0: Starting RTL generation for module 'final_soc_nios2_qsys_0'
+Info: nios2_qsys_0:   Generation command is [exec C:/altera/14.0/quartus/bin64/eperlcmd.exe -I C:/altera/14.0/quartus/bin64/perl/lib -I C:/altera/14.0/quartus/sopc_builder/bin/europa -I C:/altera/14.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/14.0/quartus/sopc_builder/bin -I C:/altera/14.0/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I C:/altera/14.0/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I C:/altera/14.0/quartus/../ip/altera/nios2_ip/altera_nios2 -I C:/altera/14.0/quartus/../ip/altera/nios2_ip/altera_nios2 -- C:/altera/14.0/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=final_soc_nios2_qsys_0 --dir=C:/Temp/alt6901_2609653805643051713.dir/0090_nios2_qsys_0_gen/ --quartus_bindir=C:/altera/14.0/quartus/bin64 --verilog --config=C:/Temp/alt6901_2609653805643051713.dir/0090_nios2_qsys_0_gen//final_soc_nios2_qsys_0_processor_configuration.pl  --do_build_sim=0  ]
+Info: nios2_qsys_0: # 2016.04.10 16:58:36 (*) Starting Nios II generation
+Info: nios2_qsys_0: # 2016.04.10 16:58:36 (*)   Checking for plaintext license.
+Info: nios2_qsys_0: # 2016.04.10 16:58:37 (*)   Couldn't query license setup in Quartus directory C:/altera/14.0/quartus/bin64
+Info: nios2_qsys_0: # 2016.04.10 16:58:37 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: nios2_qsys_0: # 2016.04.10 16:58:37 (*)   LM_LICENSE_FILE environment variable is empty
+Info: nios2_qsys_0: # 2016.04.10 16:58:37 (*)   Plaintext license not found.
+Info: nios2_qsys_0: # 2016.04.10 16:58:37 (*)   No license required to generate encrypted Nios II/e.
+Info: nios2_qsys_0: # 2016.04.10 16:58:37 (*)   Elaborating CPU configuration settings
+Info: nios2_qsys_0: # 2016.04.10 16:58:37 (*)   Creating all objects for CPU
+Info: nios2_qsys_0: # 2016.04.10 16:58:39 (*)   Generating RTL from CPU objects
+Info: nios2_qsys_0: # 2016.04.10 16:58:39 (*)   Creating plain-text RTL
+Info: nios2_qsys_0: # 2016.04.10 16:58:40 (*) Done Nios II generation
+Info: nios2_qsys_0: Done RTL generation for module 'final_soc_nios2_qsys_0'
+Info: nios2_qsys_0: "final_soc" instantiated altera_nios2_qsys "nios2_qsys_0"
+Info: onchip_memory2_0: Starting RTL generation for module 'final_soc_onchip_memory2_0'
+Info: onchip_memory2_0:   Generation command is [exec C:/altera/14.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/14.0/quartus/bin64/perl/lib -I C:/altera/14.0/quartus/sopc_builder/bin/europa -I C:/altera/14.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/14.0/quartus/sopc_builder/bin -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=final_soc_onchip_memory2_0 --dir=C:/Temp/alt6901_2609653805643051713.dir/0091_onchip_memory2_0_gen/ --quartus_dir=C:/altera/14.0/quartus --verilog --config=C:/Temp/alt6901_2609653805643051713.dir/0091_onchip_memory2_0_gen//final_soc_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory2_0: Done RTL generation for module 'final_soc_onchip_memory2_0'
+Info: onchip_memory2_0: "final_soc" instantiated altera_avalon_onchip_memory2 "onchip_memory2_0"
+Info: sdram: Starting RTL generation for module 'final_soc_sdram'
+Info: sdram:   Generation command is [exec C:/altera/14.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/14.0/quartus/bin64/perl/lib -I C:/altera/14.0/quartus/sopc_builder/bin/europa -I C:/altera/14.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/14.0/quartus/sopc_builder/bin -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=final_soc_sdram --dir=C:/Temp/alt6901_2609653805643051713.dir/0092_sdram_gen/ --quartus_dir=C:/altera/14.0/quartus --verilog --config=C:/Temp/alt6901_2609653805643051713.dir/0092_sdram_gen//final_soc_sdram_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram: Done RTL generation for module 'final_soc_sdram'
+Info: sdram: "final_soc" instantiated altera_avalon_new_sdram_controller "sdram"
+Info: sdram_pll: "final_soc" instantiated altpll "sdram_pll"
+Info: keys: Starting RTL generation for module 'final_soc_keys'
+Info: keys:   Generation command is [exec C:/altera/14.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/14.0/quartus/bin64/perl/lib -I C:/altera/14.0/quartus/sopc_builder/bin/europa -I C:/altera/14.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/14.0/quartus/sopc_builder/bin -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=final_soc_keys --dir=C:/Temp/alt6901_2609653805643051713.dir/0095_keys_gen/ --quartus_dir=C:/altera/14.0/quartus --verilog --config=C:/Temp/alt6901_2609653805643051713.dir/0095_keys_gen//final_soc_keys_component_configuration.pl  --do_build_sim=0  ]
+Info: keys: Done RTL generation for module 'final_soc_keys'
+Info: keys: "final_soc" instantiated altera_avalon_pio "keys"
+Info: sysid_qsys_0: "final_soc" instantiated altera_avalon_sysid_qsys "sysid_qsys_0"
+Info: led: Starting RTL generation for module 'final_soc_led'
+Info: led:   Generation command is [exec C:/altera/14.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/14.0/quartus/bin64/perl/lib -I C:/altera/14.0/quartus/sopc_builder/bin/europa -I C:/altera/14.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/14.0/quartus/sopc_builder/bin -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=final_soc_led --dir=C:/Temp/alt6901_2609653805643051713.dir/0097_led_gen/ --quartus_dir=C:/altera/14.0/quartus --verilog --config=C:/Temp/alt6901_2609653805643051713.dir/0097_led_gen//final_soc_led_component_configuration.pl  --do_build_sim=0  ]
+Info: led: Done RTL generation for module 'final_soc_led'
+Info: led: "final_soc" instantiated altera_avalon_pio "led"
+Info: keycode: Starting RTL generation for module 'final_soc_keycode'
+Info: keycode:   Generation command is [exec C:/altera/14.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/14.0/quartus/bin64/perl/lib -I C:/altera/14.0/quartus/sopc_builder/bin/europa -I C:/altera/14.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/14.0/quartus/sopc_builder/bin -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=final_soc_keycode --dir=C:/Temp/alt6901_2609653805643051713.dir/0098_keycode_gen/ --quartus_dir=C:/altera/14.0/quartus --verilog --config=C:/Temp/alt6901_2609653805643051713.dir/0098_keycode_gen//final_soc_keycode_component_configuration.pl  --do_build_sim=0  ]
+Info: keycode: Done RTL generation for module 'final_soc_keycode'
+Info: keycode: "final_soc" instantiated altera_avalon_pio "keycode"
+Info: jtag_uart_0: Starting RTL generation for module 'final_soc_jtag_uart_0'
+Info: jtag_uart_0:   Generation command is [exec C:/altera/14.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/14.0/quartus/bin64/perl/lib -I C:/altera/14.0/quartus/sopc_builder/bin/europa -I C:/altera/14.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/14.0/quartus/sopc_builder/bin -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=final_soc_jtag_uart_0 --dir=C:/Temp/alt6901_2609653805643051713.dir/0099_jtag_uart_0_gen/ --quartus_dir=C:/altera/14.0/quartus --verilog --config=C:/Temp/alt6901_2609653805643051713.dir/0099_jtag_uart_0_gen//final_soc_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart_0: Done RTL generation for module 'final_soc_jtag_uart_0'
+Info: jtag_uart_0: "final_soc" instantiated altera_avalon_jtag_uart "jtag_uart_0"
+Info: keypress: Starting RTL generation for module 'final_soc_keypress'
+Info: keypress:   Generation command is [exec C:/altera/14.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/14.0/quartus/bin64/perl/lib -I C:/altera/14.0/quartus/sopc_builder/bin/europa -I C:/altera/14.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/14.0/quartus/sopc_builder/bin -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=final_soc_keypress --dir=C:/Temp/alt6901_2609653805643051713.dir/0100_keypress_gen/ --quartus_dir=C:/altera/14.0/quartus --verilog --config=C:/Temp/alt6901_2609653805643051713.dir/0100_keypress_gen//final_soc_keypress_component_configuration.pl  --do_build_sim=0  ]
+Info: keypress: Done RTL generation for module 'final_soc_keypress'
+Info: keypress: "final_soc" instantiated altera_avalon_pio "keypress"
+Info: mm_interconnect_0: "final_soc" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: irq_mapper: "final_soc" instantiated altera_irq_mapper "irq_mapper"
+Info: rst_controller: "final_soc" instantiated altera_reset_controller "rst_controller"
+Info: nios2_qsys_0_instruction_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "nios2_qsys_0_instruction_master_translator"
+Info: nios2_qsys_0_jtag_debug_module_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "nios2_qsys_0_jtag_debug_module_translator"
+Info: nios2_qsys_0_instruction_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "nios2_qsys_0_instruction_master_agent"
+Info: nios2_qsys_0_jtag_debug_module_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "nios2_qsys_0_jtag_debug_module_agent"
+Info: nios2_qsys_0_jtag_debug_module_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "nios2_qsys_0_jtag_debug_module_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_008: "mm_interconnect_0" instantiated altera_merlin_router "router_008"
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_006: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_006"
+Info: Reusing file C:/ece385/final/final_soc/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_demux_006: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_006"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/ece385/final/final_soc/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: Reusing file C:/ece385/final/final_soc/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
+Info: final_soc: Done "final_soc" with 32 modules, 48 files
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

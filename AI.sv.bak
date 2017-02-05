@@ -1,0 +1,11 @@
+module AI     ( input Reset, Clk,
+					//input [7:0] keycode,
+					//input [9:0] WallXSize1, WallYSize1, WallX1, WallY1,
+					input  AI_Collision,
+					input  [0:1] AI_Collision_Type,
+               output [9:0] AI_TankX, AI_TankY,
+					output [1:0] AI_TankType,
+					output [9:0] AI_Xstart, AI_Ystart,
+					output AI_Missile_on,
+					output AI_Tank_Explosion);
+					

@@ -1,0 +1,31 @@
+module ps_controller(input Clk,Reset,
+							input [7:0] keyCode,
+							input keypress,
+							output [7:0] key1,key2,key3,key4)
+							
+always_ff @ (posedge Clk)
+
+if (Reset)
+begin
+
+	key1<= 8'h00;
+end
+
+else
+begin
+	
+	if (keypress == 1'b1)
+	begin
+	
+		key1<= keyCode;
+	end
+	else
+	begin
+		key1<= 8'h00;
+	end
+end
+
+
+endmodule
+	
+	

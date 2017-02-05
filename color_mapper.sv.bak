@@ -1,0 +1,125 @@
+module  color_mapper ( input        [9:0]  DrawX,DrawY,TankX,TankY,WallX1,WallY1, WallXSize1, WallYSize1,
+							  input [9:0] MissileX, MissileY,
+							  input			[1:0] TankType, MissileType
+                       output logic [7:0]  Red, Green, Blue );
+							  
+			
+			
+
+	logic [7:0] mypalette[0:15][0:2];
+	//logic [4:0] tank_Y [0:127][0:15];
+	//logic [4:0] tank_S [0:127][0:15];
+	//logic [4:0] tank_P [0:127][0:15];
+	logic [4:0] tank_G  [0:127][0:15];
+	
+	logic [4:0] wall  [0:15][0:15];
+	logic [4:0] steel [0:15][0:15];
+	logic [4:0] base  [0:15][0:15];
+	logic [4:0] wall1	[0:15][0:15];
+
+	logic tank_on;
+	logic wall_on1;
+	
+	logic missile_on1;
+	logic[9:0] Size = 10'd16;
+	logic [4:0] TankColorIndex;
+	logic [4:0]	WallColorIndex;
+	logic [4:0]	CurrColorIndex;
+	
+	palette p(.palette(mypalette));
+	//tank_yellow tankY(.rgb(tank_Y));
+	//tank_silver tankS(.rgb(tank_S));
+	//tank_purple tankP(.rgb(tank_P));
+	tank_green  tankG(.rgb(tank_G));
+	wall			w1	  (.rgb(wall1 ));
+	
+	always_comb
+	begin:tank_proc
+		if (DrawX>=TankX && DrawX<TankX+Size && DrawY>=TankY && DrawY <TankY+Size)
+			begin
+				tank_on = 1;
+			end
+		else
+			begin
+				tank_on = 0;
+			end
+		if (DrawX>=WallX1 && DrawX <WallX1 +WallXSize1 && DrawY>=WallY1 && DrawY < WallY1 + WallYSize1)
+			begin	
+				wall_on1 = 1;
+			end
+		else 
+			begin		
+				wall_on1 = 0;
+			end
+	end
+	
+	
+	always_comb
+	begin:color_pick
+			if (tank_on)
+				begin
+					if (TankType == 2'b00)
+						begin
+							TankColorIndex = tank_G[DrawX-TankX][DrawY-TankY];
+						end
+					else if (TankType == 2'b01)
+						begin
+							TankColorIndex = tank_G[DrawX-TankX+32][DrawY-TankY];
+						end
+					else if (TankType == 2'b10)
+						begin
+							TankColorIndex = tank_G[DrawX-TankX+64][DrawY-TankY];
+						end
+					else
+						begin
+							TankColorIndex = tank_G[DrawX-TankX+96][DrawY-TankY];
+						end
+				
+				end
+			else
+				begin
+					TankColorIndex = tank_G[0][0];
+				end
+			
+			
+			if (wall_on1)
+				begin
+					
+					WallColorIndex = wall1[(DrawX - WallX1)%16][(DrawY - WallY1)%16];
+				end
+					
+			else
+				begin
+				
+				WallColorIndex = tank_G[0][0];
+				end
+			
+	end
+	
+
+		
+	always_comb
+		begin
+		
+			if (TankColorIndex != 8'd1 && tank_on == 1'b1)
+				begin
+					Red = mypalette[TankColorIndex][0];
+					Green = mypalette[TankColorIndex][1];
+					Blue = mypalette[TankColorIndex][2];
+					
+				end
+			else if (WallColorIndex != 8'd1 && wall_on1 == 1'b1)
+				begin
+					Red = mypalette[WallColorIndex][0];
+					Green = mypalette[WallColorIndex][1];
+					Blue = mypalette[WallColorIndex][2];
+				end
+			else
+				begin
+					Red = 8'h00;
+					Green = 8'h00;
+					Blue = 8'h00;
+				end
+		end
+	
+endmodule

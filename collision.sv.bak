@@ -1,0 +1,144 @@
+module collision(input Clk,
+					  input [7:0]keycode,
+					  input [9:0]  TankX, TankY,WallXSize, WallYSize, WallX, WallY,
+					  //
+					  input [9:0]  MissileX, MissileY,
+					  input [1:0] MissileType,
+					  output logic Missile_Collision,
+					  //
+					  output logic Tank_Collision,
+					  output logic [0:1] Collision_Type
+					  );
+
+parameter [9:0] Tank_X_Step=1;      // Step size on the X axis
+parameter [9:0] Tank_Y_Step=1;      // Step size on the Y axis
+parameter [9:0] Tank_Size = 16;
+parameter [9:0] MissileStep = 10'd2;
+
+always_ff @( posedge Clk)
+	begin
+	case (keycode)
+	
+		8'h1a: //up
+		begin
+		
+			if ((TankX+Tank_Size > WallX) && (TankX < WallX + WallXSize))
+			begin
+					if(TankY + (~(Tank_Y_Step) + 1'b1) != WallY + WallYSize)
+					begin
+						Tank_Collision <= 1'b0;	
+					end
+					
+					else
+					begin
+					Tank_Collision <= 1'b1;
+					Collision_Type <= 2'd1;
+					end
+			end
+			else
+			begin
+			
+				Tank_Collision <= 1'b0;
+			end
+		end
+		8'h16: //down
+		begin
+		
+			if ((TankY + Tank_Size + Tank_Y_Step + 1'b1 == WallY) &&(TankX+Tank_Size > WallX) && (TankX < WallX + WallXSize))//within the bounds of the wall
+			begin
+				Tank_Collision <= 1'b1;
+				Collision_Type <= 2'd1;
+			end
+			
+			else
+			begin
+				Tank_Collision <= 1'b0;
+			end
+		end
+		8'h04: //left
+		begin
+			if(((TankX + (~ (Tank_X_Step+ 1'b1) + 1'b1)) == WallX + WallXSize)&&(TankY +Tank_Size >= WallY) && (TankY <= WallY + WallYSize))//within the bounds of wall
+			begin
+				Tank_Collision <= 1'b1;
+				Collision_Type <= 2'd1;
+				end
+				
+				else
+				begin
+					Tank_Collision <= 1'b0;
+				end
+		end
+		8'h07: //right
+		begin
+		if((TankX + Tank_Size + (Tank_X_Step + 1'b1) == WallX)&&(TankY +Tank_Size >= WallY) && (TankY <= WallY + WallYSize))
+		begin
+			Tank_Collision <= 1'b1;
+			Collision_Type <= 2'd1;
+			end
+			
+		else
+			begin
+				Tank_Collision <= 1'b0;
+			end
+		end
+		endcase
+end
+	
+
+	
+always_ff @( posedge Clk)
+	begin
+	case(MissileType)
+	2'b00:
+	//up
+	if((MissileY - MissileStep == WallY + WallYSize)&&(MissileX + 10'd8 > WallX) && (MissileX < WallX + WallXSize))
+		begin
+		Missile_Collision <= 1'b1;
+		end
+	else
+		begin
+		Missile_Collision <= 1'b0;
+		end
+	
+	2'b10:
+	if ((MissileY + 10'd16 + MissileStep == WallY) && (MissileX +  10'd8 > WallX) && (MissileX < WallX + WallXSize))//within the bounds of the wall
+			begin
+				Missile_Collision <= 1'b1;
+			end
+			
+	else
+			begin
+				Missile_Collision <= 1'b0;
+			end
+	
+	2'b01:
+	if(((MissileX - MissileStep) == WallX + WallXSize)&&(MissileY + 10'd16 >= WallY) && (MissileY <= WallY + WallYSize))//within the bounds of wall
+			begin
+				Missile_Collision <= 1'b1;
+				
+				end
+				
+	else
+			begin
+				Missile_Collision <= 1'b0;
+			end
+	2'b11:
+	if((MissileX + 10'd16 + MissileStep == WallX)     &&(MissileY + 10'd16 >= WallY) && (MissileY <= WallY + WallYSize))
+	begin
+				Missile_Collision <= 1'b1;
+				
+				end
+				
+	else
+			begin
+				Missile_Collision <= 1'b0;
+			end
+			
+	endcase
+	end
+	
+	
+	
+										
+endmodule
+							

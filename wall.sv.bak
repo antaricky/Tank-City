@@ -1,0 +1,20 @@
+
+module  Wall ( input [9:0] Xsize, Ysize, Xcoord, Ycoord
+               output [9:0]  WallX, WallY, 
+					output [9:0] WallYsize, [9:0] WallXsize);
+    
+    logic [9:0] Wall_X_Pos, Wall_X_Motion, Wall_Y_Pos, Wall_Y_Motion, Wall_Size;
+	 
+
+	
+
+    assign WallX_Size = 16 * Xsize;  // assigns the value 4 as a 10-digit binary number, ie "0000000100"
+	 assign WallY_Size = 16 * Ysize;
+   
+       
+    assign WallX = 16 * Xcoord;
+   
+    assign WallY = 16 * Ycoord;
+    
+
+endmodule
